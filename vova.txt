@@ -1,0 +1,57 @@
+###############################################################
+#  Applying Orin Nano Emulation Overlay on Jetpack 5.0.2 BSP  #
+###############################################################
+
+Orin_Nano_Overlay_35.1.tbz2 is the tarball containing all the
+Orin Nano Emulation config and platform files which can be
+applied on top of Jetpack 5.0.2 BSP in order to emulate Jetson
+AGX Orin as Orin Nano 4GB or Orin Nano 8GB platforms.
+
+## Applying Orin Nano Emulation tarball:
+
+Below are the steps to apply Orin Nano Emulation tarball:
+
+1. Go to Jetson Linux 35.1 BSP download page on NVIDIA Developer site.
+   - Open https://developer.nvidia.com/embedded/jetson-linux-r351
+
+   Note: JetPack 5.0.2 includes Jetson Linux 35.1 BSP with Linux Kernel 5.10,
+   an Ubuntu 20.04 based root file system.
+
+2. Download "L4T Driver Package (BSP)".
+   - wget https://developer.nvidia.com/embedded/l4t/r35_release_v1.0/release/jetson_linux_r35.1.0_aarch64.tbz2
+
+3. Download Ubuntu 20.04 "Sample Root Filesystem"
+   - wget https://developer.nvidia.com/embedded/l4t/r35_release_v1.0/release/tegra_linux_sample-root-filesystem_r35.1.0_aarch64.tbz2
+
+4. Extract Jetson Linux 35.1 BSP Drivers Package
+   - sudo tar -xpf jetson_linux_r35.1.0_aarch64.tbz2
+
+5. Extract Ubuntu 20.04 "Sample Root Filesystem"
+   - cd Linux_for_Tegra/rootfs
+   - sudo tar -xpf <path-to-root-filesystem>/tegra_linux_sample-root-filesystem_r35.1.0_aarch64.tbz2
+
+6. Apply host and target overlay packages
+   - cd ../
+   - sudo ./apply_binaries.sh
+
+7. Extract Orin Nano Emulation Overlay tarball
+   - cd ../
+   - sudo tar -xpf <path-to-orin-nano-overlay>/Orin_Nano_Overlay_35.1.tbz2
+
+This applies the Orin Nano Emulation config and platform files.
+
+## Flashing commands for Orin Nano Emulation configs:
+
+1. To emulate Jetson AGX Orin as Orin Nano 4GB use below flashing command:
+   - sudo flash.sh jetson-agx-orin-devkit-as-nano4gb mmcblk0p1
+
+2. To emulate Jetson AGX Orin as Orin Nano 8GB use below flashing command:
+   - sudo flash.sh jetson-agx-orin-devkit-as-nano8gb mmcblk0p1
+
+## Known Issues 
+Here is the list of issues that were noted in our testing of overlay for supporting Orin Nano 8GB/4GB
+
+1. When emulating Jetson Orin Nano on Jetson AGX Orin Developer Kit; DLA, PVA and NVEnc which are unavailable on Jetson Orin Nano are not automatically disabled. Developers should ensure not to use DLA, PVA and NVEncoder when emulating Jetson Orin Nano.
+NVIDIA will fix this in upcoming JetPack release and automatically disable these accelerators when emulating Jetson Orin Nano on Jetson AGX Orin Developer Kit.
+
+2. When using Orin Nano 4GB emulation flashing config, framerate is capped to maximum of 30 FPS with multicapture. [Bug 3790320]
