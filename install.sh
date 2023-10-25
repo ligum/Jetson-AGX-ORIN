@@ -1,6 +1,6 @@
 # short guidance how to install OS on Jetson-AGX-ORIN developer kit MANUALLY
 
-# in some cases sdk-manager does't work properly after updates/upgrades 
+# in some cases sdk-manager won't work properly after updates/upgrades 
 
 # and especially it'll refuse to install a software for Jetson on ubuntu 22/23
 
@@ -14,11 +14,11 @@ lsusb
 cd ~
 mkdir vova
 cd ~/vova
-wget https://developer.nvidia.com/embedded/l4t/r35_release_v1.0/release/jetson_linux_r35.1.0_aarch64.tbz2
-wget https://developer.nvidia.com/embedded/l4t/r35_release_v1.0/release/tegra_linux_sample-root-filesystem_r35.1.0_aarch64.tbz2
-sudo tar -xpf jetson_linux_r35.1.0_aarch64.tbz2
+wget https://developer.nvidia.com/downloads/embedded/l4t/r35_release_v4.1/release/jetson_linux_r35.4.1_aarch64.tbz2
+wget https://developer.nvidia.com/downloads/embedded/l4t/r35_release_v4.1/release/tegra_linux_sample-root-filesystem_r35.4.1_aarch64.tbz2
+sudo tar -xf jetson_linux_r35.4.1_aarch64.tbz2
 cd ~/vova/Linux_for_Tegra/rootfs
-sudo tar -xpf ../../tegra_linux_sample-root-filesystem_r35.1.0_aarch64.tbz2
+sudo tar -xf ../../tegra_linux_sample-root-filesystem_r35.4.1_aarch64.tbz2
 sudo apt-get install libxml2-utils
 cd ..
 sudo ./apply_binaries.sh
