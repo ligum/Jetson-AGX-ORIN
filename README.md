@@ -10,6 +10,8 @@ manual friendly instalation in shell
 # on jetson press central and right buttons altogether (recovery mode)
 lsusb
 # make sure you get an output 7023 and not 7020 (for example) regarding to nvidia hardware
+
+```
 cd ~
 
 mkdir vova
@@ -33,5 +35,5 @@ cd ..
 sudo ./apply_binaries.sh
 
 sudo ./flash.sh jetson-agx-orin-devkit mmcblk0p1cd 
-
+```
 Thanks for watching!!!
