@@ -36,7 +36,7 @@ sudo ./apply_binaries.sh
 
 sudo ./flash.sh jetson-agx-orin-devkit mmcblk0p1cd 
 ```
-# for a NVME main boot option the last 
+# for a NVME main boot option the final line is different 
 ```
 cd ~
 
