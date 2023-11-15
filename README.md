@@ -37,6 +37,8 @@ sudo ./apply_binaries.sh
 sudo ./flash.sh jetson-agx-orin-devkit mmcblk0p1cd 
 ```
 # for a NVME main boot option the final line is different 
+
+# reference https://forums.developer.nvidia.com/t/jetson-agx-orin-flash-issue-in-shell-not-sdkmanager/272783
 ```
 cd ~
 
