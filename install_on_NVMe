@@ -1,3 +1,17 @@
+# short guidance how to install OS on Jetson-AGX-ORIN developer kit MANUALLY
+
+# in some cases sdk-manager won't work properly after updates/upgrades 
+
+# and especially it'll refuse to install a software for Jetson on ubuntu 22/23
+
+# therefore there is a simple algorithm how to install it manually on shell
+
+# mk any dir in /home/<user>
+
+# on jetson press central and right buttons altogether (recovery mode)
+lsusb
+# make sure you get an output 7023 and not 7020 (for example) regarding to nvidia hardware
+
 cd ~
 
 mkdir vova
