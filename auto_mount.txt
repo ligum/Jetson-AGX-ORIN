@@ -2,8 +2,8 @@
 # a NVMe drive as a secondary hidden drive
 # and you can operate it with automation
 
-sudo mount /dev/nvme0n1 /mnt/<vova>
-cd /mnt/<vova>/<anydir>
+sudo mount /dev/nvme0n1 /mnt/<linuxuser>
+cd /mnt/<linuxuser>/<mydir>
 
 # to cancel a password for user login :
 # up-right corner --> settings --> unlock<user> --> automatic login
