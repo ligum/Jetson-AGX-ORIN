@@ -7,3 +7,8 @@ cd /mnt/<vova>/<anydir>
 
 # to cancel a password for user login :
 # up-right corner --> settings --> unlock<user> --> automatic login
+
+# to cancel a password for sudo easily :
+sudo visudo
+# write in the last line :
+<linuxuser> ALL=(ALL) NOPASSWD: ALL
