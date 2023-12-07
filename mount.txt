@@ -1,5 +1,0 @@
-# there is a several option how to mount 
-# a NVMe drive as a secondary hidden drive
-# and you can operate it with automation 
-sudo mount /dev/nvme0n1 /mnt/<vova>
-cd /mnt/<vova>/<anydir>
