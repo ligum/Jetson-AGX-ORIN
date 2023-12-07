@@ -12,3 +12,8 @@ cd /mnt/<vova>/<anydir>
 sudo visudo
 # write in the last line :
 <linuxuser> ALL=(ALL) NOPASSWD: ALL
+
+# to make an automatic script in terminal on startup
+# in linux "type to search" startup app and open it
+# then in command setting write :
+gnome-terminal --bash -c "sh /home/<linuxuser>/scipt.sh; bash"
