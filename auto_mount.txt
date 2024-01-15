@@ -16,4 +16,4 @@ sudo visudo
 # to make an automatic script in terminal on startup
 # in linux "type to search" startup app and open it
 # then in command setting write :
-gnome-terminal --bash -c "sh /home/<linuxuser>/scipt.sh; bash"
+gnome-terminal -- bash -c "sh /home/<linuxuser>/scipt.sh; bash"
