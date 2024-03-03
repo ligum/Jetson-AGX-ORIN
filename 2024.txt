@@ -1,0 +1,20 @@
+https://developer.nvidia.com/downloads/embedded/l4t/r35_release_v5.0/release/jetson_linux_r35.5.0_aarch64.tbz2
+https://developer.nvidia.com/downloads/embedded/l4t/r35_release_v5.0/release/tegra_linux_sample-root-filesystem_r35.5.0_aarch64.tbz2
+
+$ sudo ./flash.sh jetson-agx-orin-devkit internal
+Jetson AGX Xavier Devkit:
+
+$ sudo ./flash.sh jetson-agx-xavier-devkit internal
+Jetson Orin NX + Xavier NX Devkit (NVMe):
+
+$ sudo ./tools/kernel_flash/l4t_initrd_flash.sh --external-device nvme0n1p1 \
+  -c tools/kernel_flash/flash_l4t_external.xml -p "-c bootloader/t186ref/cfg/flash_t234_qspi.xml" \
+  --showlogs --network usb0 p3509-a02+p3767-0000 internal
+Jetson Orin NX + Xavier NX Devkit (USB):
+
+$ sudo ./tools/kernel_flash/l4t_initrd_flash.sh --external-device sda1 \
+  -c tools/kernel_flash/flash_l4t_external.xml -p "-c bootloader/t186ref/cfg/flash_t234_qspi.xml" \
+  --showlogs --network usb0 p3509-a02+p3767-0000 internal
+Jetson Xavier NX Devkit (SD card):
+
+$ sudo ./flash.sh jetson-xavier-nx-devkit internal
